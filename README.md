@@ -1,15 +1,15 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Bookstore
 
-> Description the project.
+> Bookstore is an app that creates a list of books. The app has two pages, the Book page that displays the list of books and has a form that allows the user to add a new book completing the title input anfd the author input, and has a categories page that displays the status of the books. Build with HTML, CSS3, JavaScript and React.
 
 ## Built With
 
-- HTML CSS Javascript
+- HTML CSS Javascript React
 - Linters and Webpack
 
-## [Live Demo](https://kaskmil.github.io/toDo-list/)
+## [Live Demo coming soon...]()
 
 
 ## Getting Started
@@ -23,7 +23,7 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 
     1. git clone https://github.com/KaskMIL/bookstore.git
-    2. cd Todo_list
+    2. cd bookstore
 
 ### Install
 
