@@ -5,6 +5,7 @@ function Categories() {
   return (
     <>
       <Header />
+      <button>Check Status</button>
     </>
   );
 }
