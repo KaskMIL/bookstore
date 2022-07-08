@@ -1,15 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Book = (props) => {
+  const { title, author } = props;
   return (
     <li>
       <div className="book-data">
-        <h2>{props.title}</h2>
-        <h3>{props.author}</h3>
+        <h2>{title}</h2>
+        <h3>{author}</h3>
       </div>
-      <button>Delete</button>
+      <button type="submit">Delete</button>
     </li>
-  )
-}
+  );
+};
+
+Book.propTypes = {
+  title: PropTypes.objectOf(PropTypes.string),
+  author: PropTypes.objectOf(PropTypes.string),
+};
+
+Book.defaultProps = {
+  title: '',
+  author: '',
+};
 
 export default Book;

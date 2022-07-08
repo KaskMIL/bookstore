@@ -3,12 +3,10 @@ import React from 'react';
 // Components
 import Book from '../Book/Book';
 
-const BookList = () => {
-  return (
-    <ul>
-      <Book />
-    </ul>
-  )
-}
+const BookList = () => (
+  <ul>
+    <Book />
+  </ul>
+);
 
 export default BookList;

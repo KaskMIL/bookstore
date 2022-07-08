@@ -11,5 +11,5 @@ root.render(
     <Rooter>
       <App />
     </Rooter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
