@@ -13,3 +13,9 @@ test('Delete book from list', () => {
   const final = [{title: 'Foundation', author: 'Asimov', id: 1},{title: 'the crow', author: 'Edgard Allan Poe', id: 3}];
   expect(bookReducer(initial, delete_book(book.id))).toEqual(final);
 })
+
+test('Unkonwn action', () => {
+  const initial = [{title: 'Foundation', author: 'Asimov', id: 1},{title: 'the crow', author: 'Edgard Allan Poe', id: 3}];
+  const action = () => {return {type: 'unknown'}};
+  expect(bookReducer(initial, action)).toEqual(initial);
+})
