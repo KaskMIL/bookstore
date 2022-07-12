@@ -2,8 +2,11 @@
 const ADDBOOK = 'ADD_BOOK';
 const DELETEBOOK = 'DELETE_BOOK';
 
+// Initial state
+const initialState = [];
+
 // Reducer
-export default function bookReducer(state = [], action) {
+export default function bookReducer(state = initialState, action) {
   switch (action.type) {
     case ADDBOOK:
       return [...state, action.payload];
