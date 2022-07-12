@@ -3,7 +3,7 @@ const ADDBOOK = 'bookstore/Books/ADD_BOOK';
 const DELETEBOOK = 'bookstore/Books/DELETE_BOOK';
 
 // Initial state
-const initialState = [];
+const initialState = [{ title: 'Foundation', author: 'Asimov', id: 1 }, { title: 'El Alquimista', author: 'Cohelo', id: 2 }, { title: 'the crow', author: 'Edgard Allan Poe', id: 3 }];
 
 // Reducer
 export default function bookReducer(state = initialState, action) {
