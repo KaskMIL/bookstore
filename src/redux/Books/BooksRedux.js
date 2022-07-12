@@ -9,27 +9,19 @@ export default function bookReducer(state = [], action) {
       return [...state, action.payload];
     case DELETEBOOK:
       return [
-        ...state.filter(book => {
-          if (book.id !== action.payload) {
-            return book;
-          }
-        })
+        ...state.filter((book) => book.id !== action.payload),
       ];
     default: return state;
   }
 }
 
 // Actions Creators
-export const add_book = (book) => {
-  return {
-    type: ADDBOOK,
-    payload: book,
-  }
-}
+export const addBook = (book) => ({
+  type: ADDBOOK,
+  payload: book,
+});
 
-export const delete_book = (id) => {
-  return {
-    type: DELETEBOOK,
-    payload: id,
-  }
-}
+export const deleteBook = (id) => ({
+  type: DELETEBOOK,
+  payload: id,
+});
