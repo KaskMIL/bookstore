@@ -1,15 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+
+import { deleteBook } from '../../redux/Books/BooksRedux';
 
 const Book = (props) => {
-  const { title, author } = props;
+  const dispatch = useDispatch();
+  const { title, author, id } = props;
+
+  const handleDelete = (event, id) => {
+    event.preventDefault();
+    dispatch(deleteBook(id));
+  };
+
   return (
-    <li>
+    <li id={id}>
       <div className="book-data">
         <h2>{title}</h2>
         <h3>{author}</h3>
       </div>
-      <button type="submit">Delete</button>
+      <button onClick={(e) => handleDelete(e, id)} type="submit">Delete</button>
     </li>
   );
 };
@@ -17,6 +27,7 @@ const Book = (props) => {
 Book.propTypes = {
   title: PropTypes.string,
   author: PropTypes.string,
+  id: PropTypes.string.isRequired,
 };
 
 Book.defaultProps = {
