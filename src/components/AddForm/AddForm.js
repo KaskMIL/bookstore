@@ -31,6 +31,10 @@ function AddForm() {
     } else {
       alert('Please fill all the fields');
     }
+    setInputText({
+      title: '',
+      author: '',
+    });
   };
 
   return (
