@@ -15,8 +15,8 @@ const Book = (props) => {
 };
 
 Book.propTypes = {
-  title: PropTypes.objectOf(PropTypes.string),
-  author: PropTypes.objectOf(PropTypes.string),
+  title: PropTypes.string,
+  author: PropTypes.string,
 };
 
 Book.defaultProps = {

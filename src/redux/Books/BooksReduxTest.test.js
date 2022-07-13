@@ -1,7 +1,6 @@
 import deepFreeze from 'deep-freeze';
 import * as actions from './BooksRedux';
 
-
 test('Add book to list', () => {
   const initial = [];
   const book = { title: 'Foundation', author: 'Asimov', id: 1 };
