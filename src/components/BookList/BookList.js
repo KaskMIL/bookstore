@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { baseUrl } from '../../redux/Books/BooksRedux';
+// Action creator
 import { getBookList } from '../../redux/Books/BooksAsync';
 // Components
 import Book from '../Book/Book';

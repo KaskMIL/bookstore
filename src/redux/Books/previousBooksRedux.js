@@ -1,5 +1,3 @@
-/**
-
 // API
 export const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/rp0oOHqDES4ymPnOtaZR/books';
 
@@ -51,4 +49,3 @@ export const getBooksfromAPI = () => (dispatch) => {
     .then((response) => response.json())
     .then((json) => dispatch(updateState(json)));
 };
- */
