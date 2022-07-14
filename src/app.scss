@@ -2,7 +2,6 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
 }
 
 *,
@@ -14,18 +13,24 @@ html {
 :root {
   --main-blue: #0290ff;
   --link-clicked-category: #121212;
-  --link: #2C2C2C;
+  --link: #2c2c2c;
   --author: #4386bf;
-
 }
 
 body {
-  font-size: 1.6rem;
   font-family: 'Montserrat', sans-serif;
+  background-color: rgba(0, 0, 0, 0.05);
+  margin: 0;
+  padding: 0;
 }
 
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
 }

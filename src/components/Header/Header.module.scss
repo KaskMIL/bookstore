@@ -1,0 +1,54 @@
+:root {
+  --main-blue: #0290ff;
+  --link-clicked-category: #121212;
+  --author: #4386bf;
+  --oval: #e8e8e8;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 5rem;
+  background-color: white;
+
+  nav {
+    display: flex;
+    align-items: baseline;
+
+    h1 {
+      margin-right: 2.938rem;
+      color: var(--main-blue);
+      font-weight: 800;
+      font-size: 1.875rem;
+    }
+
+    ul {
+      display: flex;
+      column-gap: 2.563rem;
+
+      li {
+        font-size: 0.813rem;
+        color: var(--link-clicked-category);
+
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.1px solid var(--oval);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+
+    svg {
+      color: var(--main-blue);
+    }
+  }
+}
