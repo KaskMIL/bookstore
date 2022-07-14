@@ -5,7 +5,7 @@ export const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.n
 
 // Actions
 const ADDBOOK = 'bookstore/Books/ADD_BOOK';
-// const DELETEBOOK = 'bookstore/Books/DELETE_BOOK';
+const DELETEBOOK = 'bookstore/Books/DELETE_BOOK';
 const UPDATESTATE = 'bookstore/Books/UPDATE_STATE';
 
 const initialState = [];
@@ -37,6 +37,19 @@ export const addBook = createAsyncThunk(ADDBOOK, async (newBook) => {
   return response.text();
 });
 
+export const deleteBook = createAsyncThunk(DELETEBOOK, async (id) => {
+  const response = await fetch(`${baseUrl}/${id}`, {
+    method: 'DELETE',
+    body: JSON.stringify({
+      item_id: id,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+  return response;
+});
+
 // Slice reducer
 const sliceBook = createSlice({
   name: 'books',
@@ -50,6 +63,9 @@ const sliceBook = createSlice({
       return books;
     },
     [addBook.fulfilled]: (state, action) => [...state, action.payload],
+    [deleteBook.fulfilled]: (state, action) => [
+      ...state.filter((book) => book.id !== action.payload.item_id),
+    ],
   },
 });
 
