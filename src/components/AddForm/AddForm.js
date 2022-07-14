@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { v4 } from 'uuid';
 
 import { useDispatch } from 'react-redux';
-import { addBook } from '../../redux/Books/BooksRedux';
+import { addBook } from '../../redux/Books/BooksAsync';
 
 function AddForm() {
   const [inputText, setInputText] = useState({

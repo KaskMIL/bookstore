@@ -1,14 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import bookReducer from './Books/BooksRedux';
+import BooksAsync from './Books/BooksAsync';
 import categoriesReducer from './Categories/CategoriesRedux';
-import initialData from './intialData';
+
+const initialiData = {};
 
 const store = configureStore({
   reducer: {
-    books: bookReducer,
+    books: BooksAsync,
     categories: categoriesReducer,
   },
-  initialData,
+  initialiData,
 });
 
 export default store;
