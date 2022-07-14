@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
-import { deleteBook } from '../../redux/Books/BooksRedux';
+import { deleteBook } from '../../redux/Books/BooksAsync';
 
 const Book = (props) => {
   const dispatch = useDispatch();
@@ -19,7 +19,9 @@ const Book = (props) => {
         <h2>{title}</h2>
         <h3>{author}</h3>
       </div>
-      <button onClick={(e) => handleDelete(e, id)} type="submit">Delete</button>
+      <button onClick={(e) => handleDelete(e, id)} type="submit">
+        Delete
+      </button>
     </li>
   );
 };
@@ -27,12 +29,13 @@ const Book = (props) => {
 Book.propTypes = {
   title: PropTypes.string,
   author: PropTypes.string,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
 };
 
 Book.defaultProps = {
   title: '',
   author: '',
+  id: '',
 };
 
 export default Book;

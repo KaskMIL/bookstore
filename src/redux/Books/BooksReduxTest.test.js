@@ -1,5 +1,5 @@
 import deepFreeze from 'deep-freeze';
-import * as actions from './BooksRedux';
+import * as actions from './previousBooksRedux';
 
 test('Add book to list', () => {
   const initial = [];
