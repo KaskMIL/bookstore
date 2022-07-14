@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Select from 'react-select';
 import { v4 } from 'uuid';
 
 import { useDispatch } from 'react-redux';
@@ -9,14 +10,27 @@ function AddForm() {
     title: '',
     author: '',
   });
+  const [categoryInput, setCategory] = useState({ category: '' });
 
   const dispatch = useDispatch();
+
+  const options = [
+    { value: 'Action', label: 'Action' },
+    { value: 'Fiction', label: 'Fiction' },
+    { value: 'Science-Fiction', label: 'Science-fitcion' },
+    { value: 'Romance', label: 'Romance' },
+    { value: 'History', label: 'History' },
+  ];
 
   const handleChange = (e) => {
     setInputText({
       ...inputText,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleCategory = (e) => {
+    setCategory({ category: e.value });
   };
 
   const newBook = (e) => {
@@ -26,6 +40,7 @@ function AddForm() {
         title: inputText.title,
         author: inputText.author,
         id: v4(),
+        category: categoryInput.category,
       };
       dispatch(addBook(newBook));
     } else {
@@ -55,6 +70,7 @@ function AddForm() {
           value={inputText.author}
           placeholder="Book Author"
         />
+        <Select options={options} onChange={(e) => handleCategory(e)} />
         <button onClick={(e) => newBook(e)} type="submit">
           Add
         </button>
