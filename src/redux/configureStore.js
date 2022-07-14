@@ -8,7 +8,7 @@ const store = configureStore({
     books: bookReducer,
     categories: categoriesReducer,
   },
-  preloadedState: initialData,
+  initialData,
 });
 
 export default store;
