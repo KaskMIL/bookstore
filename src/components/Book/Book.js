@@ -10,7 +10,7 @@ import styles from './Book.module.scss';
 const Book = (props) => {
   const dispatch = useDispatch();
   const {
-    title, author, id, category,
+    title, author, id, category, porcent,
   } = props;
 
   const handleDelete = (event, id) => {
@@ -49,10 +49,12 @@ const Book = (props) => {
               '100%': '#379cf6',
             }}
             trailColor="#e8e8e8"
-            percent={15}
+            percent={porcent}
           />
           <div className={styles.porcentData}>
-            <span className={styles.porcent}>15%</span>
+            <span className={styles.porcent}>
+              {`${porcent}%`}
+            </span>
             <span className={styles.complete}>completed</span>
           </div>
         </div>
@@ -73,6 +75,7 @@ Book.propTypes = {
   author: PropTypes.string,
   id: PropTypes.string,
   category: PropTypes.string,
+  porcent: PropTypes.number,
 };
 
 Book.defaultProps = {
@@ -80,6 +83,7 @@ Book.defaultProps = {
   author: '',
   id: '',
   category: '',
+  porcent: 0,
 };
 
 export default Book;

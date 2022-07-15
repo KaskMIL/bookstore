@@ -22,6 +22,7 @@ function BookList() {
           author={book.author}
           id={book.item_id}
           category={book.category}
+          porcent={book.porcent}
         />
       ))}
     </ul>

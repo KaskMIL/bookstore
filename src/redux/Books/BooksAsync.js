@@ -29,6 +29,7 @@ export const addBook = createAsyncThunk(ADDBOOK, async (newBook) => {
       title: newBook.title,
       author: newBook.author,
       category: newBook.category,
+      porcent: 0,
     }),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
