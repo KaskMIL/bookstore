@@ -11,10 +11,7 @@ html {
 }
 
 :root {
-  --main-blue: #0290ff;
-  --link-clicked-category: #121212;
   --link: #2c2c2c;
-  --author: #4386bf;
 }
 
 body {
@@ -22,7 +19,7 @@ body {
   background-color: rgba(0, 0, 0, 0.05);
   margin: 0;
   padding: 0;
-  height: 150vh;
+  height: 100vh;
 }
 
 ul {
