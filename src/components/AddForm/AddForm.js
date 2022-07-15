@@ -12,6 +12,7 @@ function AddForm() {
     author: '',
   });
   const [categoryInput, setCategory] = useState({ category: '' });
+  const [formComplete, setFormComplete] = useState({ complete: false });
 
   const dispatch = useDispatch();
 
@@ -37,7 +38,7 @@ function AddForm() {
       };
       dispatch(addBook(newBook));
     } else {
-      alert('Please fill all the fields');
+      setFormComplete({ ...formComplete, complete: !formComplete.complete });
     }
     setInputText({
       title: '',
@@ -77,7 +78,11 @@ function AddForm() {
           <option value="Science-Fiction">Science-Fiction</option>
           <option value="Romance">Romance</option>
         </select>
-        <button className={styles.addBtn} onClick={(e) => newBook(e)} type="submit">
+        <button
+          className={styles.addBtn}
+          onClick={(e) => newBook(e)}
+          type="submit"
+        >
           ADD BOOK
         </button>
       </form>
