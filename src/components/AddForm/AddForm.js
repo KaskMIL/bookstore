@@ -4,11 +4,14 @@ import { v4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../../redux/Books/BooksAsync';
 
+import styles from './AddForm.module.scss';
+
 function AddForm() {
   const [inputText, setInputText] = useState({
     title: '',
     author: '',
   });
+  const [categoryInput, setCategory] = useState({ category: '' });
 
   const dispatch = useDispatch();
 
@@ -19,6 +22,10 @@ function AddForm() {
     });
   };
 
+  const handleCategory = (e) => {
+    setCategory({ category: e.target.value });
+  };
+
   const newBook = (e) => {
     e.preventDefault();
     if (inputText.title && inputText.author) {
@@ -26,6 +33,7 @@ function AddForm() {
         title: inputText.title,
         author: inputText.author,
         id: v4(),
+        category: categoryInput.category,
       };
       dispatch(addBook(newBook));
     } else {
@@ -38,15 +46,17 @@ function AddForm() {
   };
 
   return (
-    <section>
+    <section className={styles.formSection}>
+      <div className={styles.separatorLine} />
       <h2>ADD NEW BOOK</h2>
-      <form>
+      <form className={styles.form}>
         <input
           onChange={(e) => handleChange(e)}
           type="text"
           name="title"
           value={inputText.title}
           placeholder="Book Title"
+          className={styles.input}
         />
         <input
           onChange={(e) => handleChange(e)}
@@ -54,9 +64,21 @@ function AddForm() {
           name="author"
           value={inputText.author}
           placeholder="Book Author"
+          className={styles.input}
         />
-        <button onClick={(e) => newBook(e)} type="submit">
-          Add
+        <select
+          onChange={(e) => handleCategory(e)}
+          value={categoryInput.category}
+          className={styles.input}
+        >
+          <option value="">Category</option>
+          <option value="Action">Action</option>
+          <option value="Fiction">Fiction</option>
+          <option value="Science-Fiction">Science-Fiction</option>
+          <option value="Romance">Romance</option>
+        </select>
+        <button className={styles.addBtn} onClick={(e) => newBook(e)} type="submit">
+          ADD BOOK
         </button>
       </form>
     </section>
