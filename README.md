@@ -9,7 +9,7 @@
 - HTML CSS Javascript React
 - Linters and Webpack
 
-## [Live Demo coming soon...]()
+## [Live Demo - Netlify](https://dev--bejewelled-llama-07d4a6.netlify.app/)
 
 
 ## Getting Started
