@@ -6,7 +6,7 @@ import styles from './Header.module.scss';
 function Header() {
   return (
     <header className={styles.header}>
-      <nav>
+      <nav className={styles.nav}>
         <h1>Bookstore CMS</h1>
         <ul>
           <li>
@@ -17,7 +17,7 @@ function Header() {
           </li>
         </ul>
       </nav>
-      <div className="oval">
+      <div className={styles.oval}>
         <ImUser />
       </div>
     </header>
